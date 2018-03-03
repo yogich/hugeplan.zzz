@@ -31,11 +31,7 @@ export class LoaderElemComponent implements OnInit {
             loaderLogo.classList.add('showed');
             loaderDescription.classList.add('showed');
 
-            try {
-                loaderBar.go(0);
-            } catch (e) {
-                console.log(e);
-            }
+            loaderBar.go(0);
 
             chooseDelay.MicroDelay(loading);
         }
