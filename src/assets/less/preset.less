@@ -1,0 +1,196 @@
+@import "set.less";
+
+/* PRESET.LESS: common for landing project */
+
+/* TEXT STYLE PRESETS --------------------------------------------------------------------------------------------------- */
+
+/* HEADERS TEXT STYLE PRESET */
+
+.header-block{
+  font-size: 24px;
+}
+
+.header-text-style {
+
+  /* COMMON FS STYLES */
+
+  &.fs--very-small{
+    font-size: .7em;
+  }
+  &.fs--small{
+    font-size: .85em;
+    @media (max-width: @max-sm-width) {
+      font-size: .8em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--medium{
+    font-size: 1em;
+    @media (max-width: @max-sm-width) {
+      font-size: .85em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--big{
+    font-size: 1.15em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .85em;
+    }
+  }
+  &.fs--very-big{
+    font-size: 1.3em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1.15em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: 1em;
+    }
+  }
+
+  // specific styles header
+  &.header--std{
+    .header-text-style.fs--very-big;
+    .ff_tpl(0);
+  }
+  &.header--index {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+  &.header--portfolio{
+    .header-text-style.fs--medium;
+  }
+}
+
+/* TITLES TEXT STYLE PRESET */
+
+.title-block{
+  font-size: 15px;
+}
+
+.title-text-style{
+
+  /* COMMON FS STYLES */
+
+  &.fs--very-small{
+    font-size: .7em;
+  }
+  &.fs--small{
+    font-size: .85em;
+    @media (max-width: @max-sm-width) {
+      font-size: .8em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--medium{
+    font-size: 1em;
+    @media (max-width: @max-sm-width) {
+      font-size: .85em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--big{
+    font-size: 1.15em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .85em;
+    }
+  }
+  &.fs--very-big{
+    font-size: 1.3em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1.15em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: 1em;
+    }
+  }
+}
+
+/* CONTENT TEXT STYLE PRESET */
+
+.text-block{
+  font-size: 14px;
+}
+
+.content-text-style{
+
+  /* COMMON FS STYLES */
+
+  &.fs--very-small{
+    font-size: .7em;
+  }
+  &.fs--small{
+    font-size: .85em;
+    @media (max-width: @max-sm-width) {
+      font-size: .8em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--medium{
+    font-size: 1em;
+    @media (max-width: @max-sm-width) {
+      font-size: .85em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .7em;
+    }
+  }
+  &.fs--big{
+    font-size: 1.15em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: .85em;
+    }
+  }
+  &.fs--very-big{
+    font-size: 1.3em;
+    @media (max-width: @max-sm-width) {
+      font-size: 1.15em;
+    }
+    @media (max-width: @max-xs-width) {
+      font-size: 1em;
+    }
+  }
+}
+
+/* FLEX TABLE PRESET */
+
+.flex-table{
+  .flex;
+  .flex-wrap;
+  .flex-ceil{
+    .flex-grow;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

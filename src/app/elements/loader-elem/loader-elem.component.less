@@ -1,0 +1,96 @@
+@import "../../../assets/less/set.less";
+
+/* LOADER */
+
+.loader-container{
+  .fixed;
+  .flex;
+  .flex-column;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: @std-dark-222;
+  z-index: 99;
+  overflow: hidden;
+  .logo{
+    .pos-top-center;
+    .flex;
+    .flex-column;
+    .justify-center;
+    .text-center;
+    .anim-std-3-2;
+    .text-uppercase;
+    width: 100%;
+    height: auto;
+    margin-top: -50px;
+    color: #fff;
+    opacity: 0;
+    &.showed{
+      margin-top: -65px;
+      opacity: 1
+    }
+  }
+  .description{
+    .pos-top-center;
+    .flex;
+    .justify-center;
+    .anim-std-3-4;
+    .text-light;
+    width: 100%;
+    color: #fff;
+    opacity: 0;
+    &.showed{
+      margin-top: 25px;
+      opacity: 1
+    }
+  }
+  .load-progress{
+    .absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: @std-dark-666;
+    margin-top: -1px;
+    animation: openLoadBar 1s
+  }
+  &.closing{
+    animation:closeLoadBar 2s;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0
+  }
+}
+
+@keyframes openLoadBar {
+  from{
+    left:50%;
+    width:0;
+  }
+  to{
+    left:0;
+    width:100%;
+  }
+}
+@keyframes closeLoadBar {
+  from{
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+  }
+  50%{
+    top:50%;
+    left:0;
+    width:100%;
+    height:2px;
+  }
+  to{
+    left:50%;
+    top:50%;
+    width:0;
+    height:0;
+  }
+}
