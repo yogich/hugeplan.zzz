@@ -24,6 +24,7 @@ export class IndexPageComponent implements OnInit {
     this.keys = Object.keys(this.pages);
 
     console.log(this.pages);
+    console.log(this.keys);
 
   }
 
