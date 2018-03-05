@@ -1,3 +1,19 @@
-<p>
-  index-page works!
-</p>
+<div class="wrapper-index">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="flex-table">
+                <div class="flex-cell col-xs-12">
+                    <div class="header-block">
+                        <h1>Huge plan</h1>
+                        <div class="subtitle">index</div>
+                    </div>
+                </div>
+                <app-cell-elem
+                    *ngFor="let page of pages"
+                    [page]="page"
+                ></app-cell-elem>
+            </div>
+        </div>
+    </div>
+</div>
+
