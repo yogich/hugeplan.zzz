@@ -1,11 +1,30 @@
 @import "../../../assets/less/set.less";
+@import "../../../assets/less/preset.less";
 
 .wrapper-index{
   height: 100%;
+
+
   &>.container-fluid{
     height: 100%;
     &>.row{
       height: 100%;
+      &>*{
+        height: 33%;
+      }
+    }
+  }
+
+  .header-block{
+    .flex;
+    .flex-column;
+    .flex-full-center;
+    .text-uppercase;
+    .header-text-decorator;
+    width: 100%;
+    height: 100%;
+    h1{
+      .header-text-style.fs--medium;
     }
   }
 }

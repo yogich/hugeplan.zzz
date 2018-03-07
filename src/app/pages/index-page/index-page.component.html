@@ -7,9 +7,12 @@
                     <div class="subtitle">index</div>
                 </div>
             </div>
-            <app-cell-elem class="col col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"
+            <app-cell-elem
                     *ngFor="let key of keys"
                     [page]="pages[key]"
+                    class="col col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                    (isEmpty)="checkStatus($event)"
+                    [ngClass]="{'empty':true}"
             ></app-cell-elem>
         </div>
     </div>

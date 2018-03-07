@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, ChangeDetectorRef} from '@angular/core';
 import { IndexDataPagesService } from '../../elements/cell-elem/indexDataPages.service';
 
 @Component({
@@ -11,21 +11,21 @@ export class IndexPageComponent implements OnInit {
 
   public keys;
   public pages;
-  public temp;
+  public status;
 
-  constructor(private indexData: IndexDataPagesService) {}
+  constructor(private indexData: IndexDataPagesService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
+    this.cdr.markForCheck();
 
-    // this.temp = this.indexData.getData().subscribe(temp => {
-    //   console.log(temp);
-    // });
     this.pages = this.indexData.getData();
     this.keys = Object.keys(this.pages);
 
-    console.log(this.pages);
-    console.log(this.keys);
+  }
 
+  checkStatus(status) {
+    console.log(status);
+    this.status = status;
   }
 
 }

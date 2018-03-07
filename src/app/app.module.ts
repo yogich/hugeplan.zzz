@@ -10,21 +10,33 @@ import { HttpModule } from '@angular/http';
 // import { HttpClientModule } from "@angular/common/http";
 import { IndexDataPagesService  } from './elements/cell-elem/indexDataPages.service';
 import { IndexDataPage  } from '../assets/data/indexDataPage';
+import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
+import {Router, RouterModule} from "@angular/router";
+
+const routes = [
+  {path: '', component: IndexPageComponent},
+  {path: 'portfolio', component: PortfolioPageComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexPageComponent,
     LoaderElemComponent,
-    CellElemComponent
+    CellElemComponent,
+    PortfolioPageComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
+      RouterModule.forRoot(routes)
     // HttpClientModule,
     // IndexDataPagesService
   ],
   providers: [IndexDataPage, IndexDataPagesService],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
