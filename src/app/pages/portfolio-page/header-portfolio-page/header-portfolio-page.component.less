@@ -1,0 +1,24 @@
+@import "../../../../../src/assets/less/set.less";
+@import "../../../../../src/assets/less/preset.less";
+
+header {
+  .fixed;
+  .flex;
+  .flex-full-center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: @so-white-f6;
+  z-index: 9;
+
+  &:after{
+    content: "";
+    .absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    .gradient(@so-white-f6, transparent);
+  }
+}

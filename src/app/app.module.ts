@@ -6,12 +6,17 @@ import { AppComponent } from './app.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { LoaderElemComponent } from './elements/loader-elem/loader-elem.component';
 import { CellElemComponent } from './elements/cell-elem/cell-elem.component';
-import { HttpModule } from '@angular/http';
-// import { HttpClientModule } from "@angular/common/http";
 import { IndexDataPagesService  } from './elements/cell-elem/indexDataPages.service';
 import { IndexDataPage  } from '../assets/data/indexDataPage';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
-import {Router, RouterModule} from "@angular/router";
+import { RouterModule} from '@angular/router';
+import { BackToIndexComponent } from './elements/back-to-index/back-to-index.component';
+import { HeaderPortfolioPageComponent } from './pages/portfolio-page/header-portfolio-page/header-portfolio-page.component';
+import { AboutMeShortComponent } from './elements/about-me-short/about-me-short.component';
+import { ListPortfolioBlockComponent } from './pages/portfolio-page/list-portfolio-block/list-portfolio-block.component';
+import { PortfolioDataPage } from '../assets/data/portfolioDataPage';
+import { PortfolioDataPageService } from './pages/portfolio-page/list-portfolio-block/portfolioDataPage.service';
+import { ListPortfolioItemComponent } from './pages/portfolio-page/list-portfolio-block/list-portfolio-item/list-portfolio-item.component';
 
 const routes = [
   {path: '', component: IndexPageComponent},
@@ -24,16 +29,18 @@ const routes = [
     IndexPageComponent,
     LoaderElemComponent,
     CellElemComponent,
-    PortfolioPageComponent
+    PortfolioPageComponent,
+    BackToIndexComponent,
+    HeaderPortfolioPageComponent,
+    AboutMeShortComponent,
+    ListPortfolioBlockComponent,
+    ListPortfolioItemComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-      RouterModule.forRoot(routes)
-    // HttpClientModule,
-    // IndexDataPagesService
+    RouterModule.forRoot(routes)
   ],
-  providers: [IndexDataPage, IndexDataPagesService],
+  providers: [IndexDataPage, IndexDataPagesService, PortfolioDataPage, PortfolioDataPageService],
   bootstrap: [AppComponent]
 })
 

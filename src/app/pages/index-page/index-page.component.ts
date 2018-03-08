@@ -1,5 +1,7 @@
-import {Component, OnInit, Input, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { IndexDataPagesService } from '../../elements/cell-elem/indexDataPages.service';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-index-page',
@@ -7,25 +9,38 @@ import { IndexDataPagesService } from '../../elements/cell-elem/indexDataPages.s
   styleUrls: ['./index-page.component.less']
 })
 
-export class IndexPageComponent implements OnInit {
+export class IndexPageComponent implements OnInit, AfterViewInit {
 
   public keys;
   public pages;
   public status;
+  public content;
 
-  constructor(private indexData: IndexDataPagesService, private cdr: ChangeDetectorRef) {}
+  constructor(private indexData: IndexDataPagesService) {}
 
   ngOnInit() {
-    this.cdr.markForCheck();
 
     this.pages = this.indexData.getData();
     this.keys = Object.keys(this.pages);
 
+    this.content = this.indexData.getContent();
+
   }
 
-  checkStatus(status) {
+  ngAfterViewInit() { // TODO right
+    let counter = 0;
+    const content = this.content;
+
+    $('app-cell-elem').each(function () {
+      if (content[counter].content === 'false') {
+        $(this).addClass('empty');
+      }
+      counter++;
+    });
+  }
+
+  checkStatus(status: any) {
     console.log(status);
-    this.status = status;
   }
 
 }

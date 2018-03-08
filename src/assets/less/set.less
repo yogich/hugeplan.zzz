@@ -82,10 +82,25 @@
 /* UNIVERSAL .CLASS STYLES ------------------------------------------------------------------------------------------ */
 
 /**@Universal templates begin**/
+
+a{
+  color: @std-dark-666;
+  transition: color .3s ease;
+  &:hover{
+    color: red;
+    text-decoration: none;
+  }
+  &:focus, &:visited{
+    outline: none;
+    text-decoration: none;
+  }
+}
+
 .wrapper {
-  position: relative;
+  .relative;
   height: 100%;
   min-height: 100%;
+  font-size: 14px;
 }
 .wrapper-min {
   min-width: @wrapper-min-width;

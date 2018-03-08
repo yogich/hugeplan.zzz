@@ -1,5 +1,4 @@
-import {Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef} from '@angular/core';
-import {isEmpty} from "rxjs/operator/isEmpty";
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-cell-elem',
@@ -9,26 +8,25 @@ import {isEmpty} from "rxjs/operator/isEmpty";
 
 export class CellElemComponent implements OnInit {
 
-  @Input() page;
+  @Input() content;
 
-  @Output() isEmpty = new EventEmitter<boolean>();
+  @Output() contentStatus = new EventEmitter<boolean>();
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor() {}
 
-   checkEmpty(status: any) {
-      this.cdr.markForCheck();
-      this.isEmpty.emit(status);
-   }
-
-  ngOnInit() {
-
-    if (this.page.content === 'empty') {
-      this.checkEmpty(true);
-    } else {
-      this.checkEmpty(false);
-    }
+  checkStatus(status: any) {
+      this.contentStatus.emit(status);
   }
 
+  ngOnInit() {
+    //console.log(this.page.content);
+
+    if (this.content.content === 'false') {
+      this.checkStatus(false);
+    } else {
+      this.checkStatus(true);
+    }
+  }
 
 
 }

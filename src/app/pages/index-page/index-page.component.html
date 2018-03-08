@@ -9,10 +9,9 @@
             </div>
             <app-cell-elem
                     *ngFor="let key of keys"
-                    [page]="pages[key]"
-                    class="col col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
-                    (isEmpty)="checkStatus($event)"
-                    [ngClass]="{'empty':true}"
+                    [content]="pages[key]"
+                    class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4"
+                    (contentStatus) = "checkStatus($event)"
             ></app-cell-elem>
         </div>
     </div>

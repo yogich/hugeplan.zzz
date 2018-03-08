@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { IndexDataPage } from '../../../assets/data/indexDataPage';
-import { Http } from '@angular/http';
-import { RequestOptions } from '@angular/http';
 
 import '../../../../node_modules/rxjs/add/operator/map';
 
@@ -9,10 +7,14 @@ import '../../../../node_modules/rxjs/add/operator/map';
 
 export class IndexDataPagesService {
 
-    constructor(public indexData: IndexDataPage, private http: Http) {}
+    constructor(public indexData: IndexDataPage) {}
 
     getData() {
         return this.indexData.data;
+    }
+
+    getContent() {
+        return this.indexData.content;
     }
 
 }

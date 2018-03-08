@@ -18,7 +18,7 @@
   /* COMMON FS STYLES */
 
   &.fs--very-small{
-    font-size: .7em;
+    font-size: .4575em;
   }
   &.fs--small{
     font-size: .85em;
@@ -73,8 +73,8 @@
 
 /* TITLES TEXT STYLE PRESET */
 
-.title-block{
-  font-size: 15px;
+.title-text-decorator{
+  font-size: 19px;
 }
 
 .title-text-style{
@@ -124,7 +124,7 @@
 
 /* CONTENT TEXT STYLE PRESET */
 
-.text-block{
+.content-text-decorator{
   font-size: 14px;
 }
 
@@ -183,9 +183,35 @@
   }
 }
 
+/* APP CELL ELEM PRESET*/
 
+app-cell-elem{
+  &.empty{
+    @media (max-width: @not-desk-device) {
+      display: none;
+    }
+  }
+}
 
+/* LOGO PRESET */
 
+.logo{
+  .flex;
+  .flex-column;
+  .flex-full-center;
+  .header-text-decorator;
+  color: @std-dark-222;
+  &.small{
+    height: 100px;
+  }
+  .name{
+    .header-text-style.fs--small;
+    .text-uppercase;
+  }
+  .sign{
+    .header-text-style.fs--very-small;
+  }
+}
 
 
 

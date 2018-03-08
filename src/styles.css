@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/font-awesome/css/font-awesome.css";
+
+@import "../src/assets/css/set.css";
+@import "../src/assets/css/preset.css";
+
+
+
 /*  @import "assets/less/set.less"; */
 
 html{
@@ -10,5 +17,6 @@ body{
     position: relative;
     height: 100%;
     margin: 0;
-    font-family: "Proxima Nova", sans-serif;
+    font-family: "HelveticaNeueCyr Roman", sans-serif;
+    background: #f6f6f6;
 }
