@@ -9,7 +9,7 @@ export class PortfolioDataPage {
                     'link': 'http://uts-group.com.ua',
                     'image': 'assets/images/portfolio/oxygen/uts.jpg',
                     'title': 'UTS Group',
-                    'description': 'Один из первых моих фуловых проектов, поэтому сверкает «отличным» кодом :D<br>Раздел с картой не мой.'
+                    'description': 'Один из первых моих фуловых проектов, поэтому сверкает «отличным» кодом :D <br> Раздел с картой не мой.'
                 },
                 'alfatech': {
                     'content': 'true',

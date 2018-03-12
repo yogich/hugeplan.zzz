@@ -1,0 +1,7 @@
+<div class="cell-wrapper">
+    <div class="main-block">
+        <div class="image" [ngStyle]="{'background-image': 'url(' + content.image + ')'}"></div>
+        <a routerLink="{{content.link}}" target="_blank" class="title">{{content.title}}</a>
+        <div class="description" [innerHtml]="content.description"></div>
+    </div>
+</div>

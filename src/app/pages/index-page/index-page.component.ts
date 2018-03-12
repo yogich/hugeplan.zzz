@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { IndexDataPagesService } from '../../elements/cell-elem/indexDataPages.service';
+import { IndexDataPagesService } from '../../elements/cell-elem-index/indexDataPages.service';
 import * as $ from 'jquery';
 
 

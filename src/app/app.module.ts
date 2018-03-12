@@ -5,8 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { LoaderElemComponent } from './elements/loader-elem/loader-elem.component';
-import { CellElemComponent } from './elements/cell-elem/cell-elem.component';
-import { IndexDataPagesService  } from './elements/cell-elem/indexDataPages.service';
+import { CellElemComponent } from './elements/cell-elem-index/cell-elem.component';
+import { IndexDataPagesService  } from './elements/cell-elem-index/indexDataPages.service';
 import { IndexDataPage  } from '../assets/data/indexDataPage';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { RouterModule} from '@angular/router';
@@ -17,6 +17,8 @@ import { ListPortfolioBlockComponent } from './pages/portfolio-page/list-portfol
 import { PortfolioDataPage } from '../assets/data/portfolioDataPage';
 import { PortfolioDataPageService } from './pages/portfolio-page/list-portfolio-block/portfolioDataPage.service';
 import { ListPortfolioItemComponent } from './pages/portfolio-page/list-portfolio-block/list-portfolio-item/list-portfolio-item.component';
+import { CellElemPortfolioComponent } from './elements/cell-elem-portfolio/cell-elem-portfolio.component';
+import { ContactFormPopupComponent } from './elements/contact-form-popup/contact-form-popup.component';
 
 const routes = [
   {path: '', component: IndexPageComponent},
@@ -34,7 +36,9 @@ const routes = [
     HeaderPortfolioPageComponent,
     AboutMeShortComponent,
     ListPortfolioBlockComponent,
-    ListPortfolioItemComponent
+    ListPortfolioItemComponent,
+    CellElemPortfolioComponent,
+    ContactFormPopupComponent
   ],
   imports: [
     BrowserModule,

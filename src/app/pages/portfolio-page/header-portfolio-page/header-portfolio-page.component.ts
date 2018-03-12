@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPortfolioPageComponent implements OnInit {
 
+  popupOpened = false;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
+  openPopup() {
+    console.log('popup Open');
+    this.popupOpened = true;
+  }
+
 
 }
