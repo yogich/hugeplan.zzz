@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Output, OnInit, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-contact-form-popup',
@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ContactFormPopupComponent implements OnInit {
 
-  @Input() popupOpened;
+  @Output() popupStatus = new EventEmitter<boolean>();
 
   constructor() { }
 
@@ -15,7 +15,7 @@ export class ContactFormPopupComponent implements OnInit {
   }
 
   closePopup() {
-    this.popupOpened = false;
+    this.popupStatus.emit(false);
   }
 
 }

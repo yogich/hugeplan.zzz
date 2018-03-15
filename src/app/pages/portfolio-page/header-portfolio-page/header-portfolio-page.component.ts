@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPortfolioPageComponent implements OnInit {
 
-  popupOpened = false;
+  popupStatus: boolean = false;
 
   constructor() { }
 
@@ -17,8 +17,11 @@ export class HeaderPortfolioPageComponent implements OnInit {
 
   openPopup() {
     console.log('popup Open');
-    this.popupOpened = true;
+    this.popupStatus = true;
   }
 
+  closePopup() {
+    this.popupStatus = false;
+  }
 
 }
