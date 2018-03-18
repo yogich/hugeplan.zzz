@@ -5,9 +5,7 @@
 @import "../src/assets/css/set.css";
 @import "../src/assets/css/preset.css";
 
-
-
-/*  @import "assets/less/set.less"; */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html{
     height: 100%;

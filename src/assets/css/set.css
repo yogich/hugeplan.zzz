@@ -29,16 +29,17 @@
 /**@Universal templates begin**/
 a {
   color: #666666;
-  transition: color .3s ease;
+  transition: color .1s ease;
 }
 a:hover {
-  color: red;
+  color: #673ab7;
   text-decoration: none;
 }
 a:focus,
 a:visited {
   outline: none;
   text-decoration: none;
+  box-shadow: none;
 }
 .wrapper {
   position: relative;
@@ -393,68 +394,16 @@ div.wrapper-empty {
 }
 /* PAGE ELEMENTS SETTINGS ---------------------------------------------------------------------------------------------------- */
 /* Input, textarea & placeholder preset */
-input,
-textarea {
-  width: auto;
-  height: 50px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333333;
-  background: #ffffff;
-  border-radius: 0;
-  padding-left: 0;
-  border: none;
-  border-bottom: 2px solid #ddddd8;
-}
-input.error,
-textarea.error {
-  border: 1px solid red;
-}
-input.valid,
-textarea.valid {
-  border: 1px solid green;
-}
-textarea {
-  padding-top: 10px;
-  border: 2px solid #ddddd8;
-  resize: none;
-}
-input.error {
-  border: default solid #ff0000 !important;
-}
-textarea.error {
-  border: 1px solid red!important;
-}
-::-webkit-input-placeholder {
-  color: #ddddd8;
-}
-::-moz-placeholder {
-  color: #ddddd8;
-}
-/* Firefox 19+ */
-:-moz-placeholder {
-  color: #ddddd8;
-}
-/* Firefox 18- */
-:-ms-input-placeholder {
-  color: #ddddd8;
-}
-input[placeholder] {
-  text-overflow: ellipsis;
-}
-input::-moz-placeholder {
-  text-overflow: ellipsis;
-}
-input:-moz-placeholder {
-  text-overflow: ellipsis;
-}
-input:-ms-input-placeholder {
-  text-overflow: ellipsis;
-}
-input[type="checkbox"][disabled] {
-  cursor: default;
-}
 /* buttons preset */
+.btn:hover {
+  color: inherit;
+}
+.btn.btn-main-color {
+  color: white;
+}
+.btn.btn-main-color:hover {
+  color: #ff9800;
+}
 /* DYNAMIC .CLASS STYLES */
 /* custom functions for std page elements */
 /* functions for gradient */

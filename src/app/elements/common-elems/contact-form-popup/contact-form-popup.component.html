@@ -1,0 +1,28 @@
+<div id="popup-article" class="popup" [ngClass]="{'show': popupOpened}">
+  <div class="popup-content">
+    <a class="popup-close" (click)="closePopup()">close</a>
+    <div class="popup-contacts">
+      <div class="wrapper-form">
+        <mat-form-field>
+          <input matInput placeholder="Input">
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select placeholder="Select">
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="wrapper-map">
+      <div id="map" class="map"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+</script>

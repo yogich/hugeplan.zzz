@@ -36,6 +36,9 @@
 
 @so-black: #333;
 
+@deep-purple: #673ab7;
+@orange: #FF9800;
+
 /* text colors preset */
 @text-light-grey: #ddddd8;
 
@@ -85,14 +88,15 @@
 
 a{
   color: @std-dark-666;
-  transition: color .3s ease;
+  transition: color .1s ease;
   &:hover{
-    color: red;
+    color: @deep-purple;
     text-decoration: none;
   }
   &:focus, &:visited{
     outline: none;
     text-decoration: none;
+    box-shadow: none;
   }
 }
 
@@ -261,44 +265,52 @@ div.wrapper-empty{height:@height-footer}
 
 /* Input, textarea & placeholder preset */
 
-input,textarea{
-  .input_tpl(auto,50px,14px,bold,@so-black,white,0);
-  padding-left: 0;
-  border: none;
-  border-bottom: 2px solid @border-light-grey;
-  &.error{
-    border: 1px solid red;
-  }
-  &.valid{
-    border: 1px solid green;
-  }
-}
-
-textarea{
-  padding-top: 10px;
-  border: 2px solid @border-light-grey;
-  resize: none;
-}
-
-input.error {border:@border-width-input-error solid @border-color-input-error!important;}
-textarea.error {border:1px solid red!important;}
-
-::-webkit-input-placeholder {color:@text-light-grey}
-::-moz-placeholder          {color:@text-light-grey}/* Firefox 19+ */
-:-moz-placeholder           {color:@text-light-grey}/* Firefox 18- */
-:-ms-input-placeholder      {color:@text-light-grey}
-
-input[placeholder]          {text-overflow:ellipsis}
-input::-moz-placeholder     {text-overflow:ellipsis}
-input:-moz-placeholder      {text-overflow:ellipsis}
-input:-ms-input-placeholder {text-overflow:ellipsis}
-
-input[type="checkbox"][disabled]{cursor: default}
+//input,textarea{
+//  .input_tpl(auto,50px,14px,bold,@so-black,white,0);
+//  padding-left: 0;
+//  border: none;
+//  border-bottom: 2px solid @border-light-grey;
+//  &.error{
+//    border: 1px solid red;
+//  }
+//  &.valid{
+//    border: 1px solid green;
+//  }
+//}
+//
+//textarea{
+//  padding-top: 10px;
+//  border: 2px solid @border-light-grey;
+//  resize: none;
+//}
+//
+//input.error {border:@border-width-input-error solid @border-color-input-error!important;}
+//textarea.error {border:1px solid red!important;}
+//
+//::-webkit-input-placeholder {color:@text-light-grey}
+//::-moz-placeholder          {color:@text-light-grey}/* Firefox 19+ */
+//:-moz-placeholder           {color:@text-light-grey}/* Firefox 18- */
+//:-ms-input-placeholder      {color:@text-light-grey}
+//
+//input[placeholder]          {text-overflow:ellipsis}
+//input::-moz-placeholder     {text-overflow:ellipsis}
+//input:-moz-placeholder      {text-overflow:ellipsis}
+//input:-ms-input-placeholder {text-overflow:ellipsis}
+//
+//input[type="checkbox"][disabled]{cursor: default}
 
 /* buttons preset */
 
 .btn{
-
+  &:hover{
+    color: inherit;
+  }
+  &.btn-main-color{
+    color: white;
+    &:hover{
+      color: @orange;
+    }
+  }
 }
 
 /* DYNAMIC .CLASS STYLES */

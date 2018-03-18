@@ -21,7 +21,9 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css",
-        "styles.css"
+        "styles.css",
+        "material-theme.scss",
+        "../node_modules/snazzy-info-window/dist/snazzy-info-window.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

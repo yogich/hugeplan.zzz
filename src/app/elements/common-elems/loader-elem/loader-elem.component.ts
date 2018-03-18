@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as nanobar from '../../../assets/js/lib/nanobar.js';
-import * as set from '../../../assets/js/custom/set.js';
+import * as nanobar from '../../../../assets/js/lib/nanobar.js';
+import * as set from '../../../../assets/js/custom/set.js';
 
 @Component({
     selector: 'app-loader-elem',

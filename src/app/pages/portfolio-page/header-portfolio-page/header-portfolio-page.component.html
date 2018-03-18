@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <a class="btn open-popup" (click)="openPopup()">Contact me</a>
+    <app-contact-me-elem (click)="openPopup()"></app-contact-me-elem>
 </header>
 
 <app-contact-form-popup *ngIf="popupStatus" (popupStatus)="closePopup()"></app-contact-form-popup>
