@@ -154,7 +154,7 @@ const routes = [
     ContactMeElemComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'hugeplan-app'}),
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,

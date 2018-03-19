@@ -10,7 +10,7 @@ declare var google: any;
 })
 export class ContactFormPopupComponent implements OnInit {
 
-  @Output() popupStatus = new EventEmitter<boolean>();
+  @Output() popupStatus = new EventEmitter();
 
   public email = new FormControl('', [Validators.required, Validators.email]);
 
