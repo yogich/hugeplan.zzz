@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PortfolioDataPage } from '../../../../assets/data/portfolioDataPage';
+import { PortfolioDataPage } from '../data/portfolioDataPage';
 
 @Injectable()
 

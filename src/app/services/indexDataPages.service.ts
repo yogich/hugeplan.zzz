@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IndexDataPage } from '../../../assets/data/indexDataPage';
+import { IndexDataPage } from '../data/indexDataPage';
 
-import '../../../../node_modules/rxjs/add/operator/map';
+import '../../../node_modules/rxjs/add/operator/map';
 
 @Injectable()
 

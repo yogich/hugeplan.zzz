@@ -1,4 +1,4 @@
-import {Component, Output, OnInit, EventEmitter} from '@angular/core';
+import {Component, Output, OnInit, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormControl, Validators} from '@angular/forms';
 declare var google: any;
@@ -6,7 +6,8 @@ declare var google: any;
 @Component({
   selector: 'app-contact-form-popup',
   templateUrl: './contact-form-popup.component.html',
-  styleUrls: ['./contact-form-popup.component.less']
+  styleUrls: ['./contact-form-popup.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ContactFormPopupComponent implements OnInit {
 
@@ -267,8 +268,8 @@ export class ContactFormPopupComponent implements OnInit {
   }
 
   getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
+    return this.email.hasError('required') ? 'Введите Ваш E-mail' :
+        this.email.hasError('email') ? 'Неверный формат E-mail адреса' :
             '';
   }
 

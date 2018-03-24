@@ -2,32 +2,51 @@
   <div class="popup-content">
     <a class="popup-close" (click)="closePopup()">close</a>
     <div class="popup-contacts">
+      <div class="header">
+        <div>Contact form & Location</div>
+      </div>
       <div class="wrapper-form">
-        <form>
-          <div class="form-group">
-            <mat-form-field>
-              <input matInput placeholder="Enter your name" required>
-            </mat-form-field>
+        <form class="container-fluid">
+          <div class="row">
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Как к Вам обращаться?" [(ngModel)]="valueName" [ngModelOptions]="{standalone: true}" required>
+                <button mat-button *ngIf="valueName" matSuffix mat-icon-button aria-label="Clear" (click)="valueName=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Ваш E-mail" [formControl]="email" [(ngModel)]="valueEmail" required>
+                <button mat-button *ngIf="valueEmail" matSuffix mat-icon-button aria-label="Clear" (click)="valueEmail=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <span matPrefix>+38 &nbsp;</span>
+                <input type="tel" matInput placeholder="Номер телефона" [(ngModel)]="valuePhone" [ngModelOptions]="{standalone: true}">
+                <button mat-button *ngIf="valuePhone" matSuffix mat-icon-button aria-label="Clear" (click)="valuePhone=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12">
+              <mat-form-field>
+                <textarea matInput placeholder="Сообщение" matTextareaAutosize matAutosizeMinRows="2"
+                       matAutosizeMaxRows="10" [(ngModel)]="valueText" [ngModelOptions]="{standalone: true}" required></textarea>
+                <button mat-button *ngIf="valueText" matSuffix mat-icon-button aria-label="Clear" (click)="valueText=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
           </div>
-          <div class="form-group">
-            <mat-form-field>
-              <input matInput placeholder="Enter your email" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
+          <div class="text-center">
+            <button type="submit" mat-raised-button color="primary" class="btn btn-main-color">Отправить</button>
           </div>
-          <div class="form-group">
-            <mat-form-field>
-              <textarea matInput placeholder="Textarea"></textarea>
-            </mat-form-field>
-          </div>
-          <div class="form-group">
-            <mat-form-field>
-              <mat-select placeholder="Select">
-                <mat-option value="option">Option</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>

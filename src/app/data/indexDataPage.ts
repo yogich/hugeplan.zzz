@@ -1,37 +1,37 @@
 export class IndexDataPage {
   public data = {
     'empty_1': {
-      'content': 'false',
+      'content': false,
       'link': '',
       'image': '',
       'description': ''
     },
     'forex': {
-      'content': 'true',
+      'content': true,
       'link': '',
       'image': 'assets/images/forex.jpg',
       'description': 'forex'
     },
     'portfolio': {
-      'content': 'true',
+      'content': true,
       'link': '/portfolio',
       'image': 'assets/images/job.jpg',
       'description': 'Job & portfolio'
     },
     'bo': {
-      'content': 'true',
+      'content': true,
       'link': '',
       'image': 'assets/images/bo.jpg',
       'description': 'binary options'
     },
     'hyip': {
-      'content': 'true',
+      'content': true,
       'link': '',
       'image': 'assets/images/hyip.jpg',
       'description': 'hyip'
     },
     'empty_2': {
-      'content': 'false',
+      'content': false,
       'link': '',
       'image': '',
       'description': ''

@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { IndexDataPagesService } from '../../elements/cell-elem-index/indexDataPages.service';
+import { Component, OnInit } from '@angular/core';
+import { IndexDataPagesService } from '../../services/indexDataPages.service';
 import * as $ from 'jquery';
 
 
@@ -9,11 +9,10 @@ import * as $ from 'jquery';
   styleUrls: ['./index-page.component.less']
 })
 
-export class IndexPageComponent implements OnInit, AfterViewInit {
+export class IndexPageComponent implements OnInit {
 
   public keys;
   public pages;
-  public status;
   public content;
 
   constructor(private indexData: IndexDataPagesService) {}
@@ -27,20 +26,16 @@ export class IndexPageComponent implements OnInit, AfterViewInit {
 
   }
 
-  ngAfterViewInit() { // TODO right
-    let counter = 0;
-    const content = this.content;
-
-    $('app-cell-elem').each(function () {
-      if (content[counter].content === 'false') {
-        $(this).addClass('empty');
-      }
-      counter++;
-    });
-  }
-
-  checkStatus(status: any) {
-    console.log(status);
-  }
+  // ngAfterViewInit() { // TODO right
+  //   let counter = 0;
+  //   const content = this.content;
+  //
+  //   $('app-cell-elem').each(function () {
+  //     if (content[counter].content === 'false') {
+  //       $(this).addClass('empty');
+  //     }
+  //     counter++;
+  //   });
+  // }
 
 }

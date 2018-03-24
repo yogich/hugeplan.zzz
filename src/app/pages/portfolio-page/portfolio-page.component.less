@@ -1,5 +1,5 @@
-@import "../../../../src/assets/less/set.less";
-@import "../../../../src/assets/less/preset.less";
+@import "../../../assets/less/set.less";
+@import "../../../assets/less/preset.less";
 
 .wrapper-portfolio{
   .custom-content{
@@ -45,6 +45,40 @@
           max-width: 100%;
           max-height: 100%;
         }
+      }
+    }
+  }
+}
+
+#portfolio-dialog{
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 0;
+  max-width: 1000px;
+  .wrapper-behance{
+    //max-height: 100%;
+    .text-center;
+    img{
+      width: 100%;
+      max-width: 1000px;
+    }
+  }
+  .mfp-close{
+    .fixed;
+    top: 10px;
+    color: white;
+  }
+}
+
+.mfp-content{
+  height: 100%;
+}
+
+.mCSB_scrollTools{
+  .mCSB_dragger{
+    &.mCSB_dragger_onDrag {
+      .mCSB_dragger_bar{
+        background-color: @deep-purple;
       }
     }
   }

@@ -1,4 +1,5 @@
 @import "../../../../assets/less/set.less";
+@import "../../../../assets/less/preset.less";
 
 .popup{
   .flex;
@@ -36,8 +37,38 @@
     animation: fade .5s ease-out 1.3s both;
 
     .popup-contacts{
-      height: 100%;
+      .flex;
+      .flex-column;
+      height: 51%;
+      padding-top: 100px;
       background: @so-white-f6;
+      .header{
+        .header-text-decorator;
+        div{
+          .text-center;
+          .header-text-style.fs--medium;
+        }
+      }
+      .wrapper-form{
+        .flex;
+        .flex-grow;
+        .flex-full-center;
+        form{
+          max-width: 1000px;
+          mat-form-field{
+            width: 100%;
+          }
+          .mat-form-field-wrapper{
+            .mat-form-field-suffix{
+              .abs-right;
+              .mat-icon {
+                height: 1.5em;
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      }
     }
 
     .wrapper-map{
@@ -61,6 +92,7 @@
     z-index: 2;
     top: 20px;
     right: 20px;
+    cursor: pointer;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;

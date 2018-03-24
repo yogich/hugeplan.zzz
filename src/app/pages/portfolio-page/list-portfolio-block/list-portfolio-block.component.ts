@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioDataPageService } from './portfolioDataPage.service';
+import { PortfolioDataPageService } from '../../../services/portfolioDataPage.service';
 
 
 @Component({
