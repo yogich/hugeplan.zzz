@@ -14,7 +14,10 @@ export class ContactFormPopupComponent implements OnInit {
   @Output() popupStatus = new EventEmitter();
 
   public email = new FormControl('', [Validators.required, Validators.email]);
-
+  public valueName;
+  public valueEmail;
+  public valuePhone;
+  public valueText;
 
   constructor() { }
 
