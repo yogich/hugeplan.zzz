@@ -6,22 +6,23 @@ import { AppComponent } from './app.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { LoaderElemComponent } from './elements/common-elems/loader-elem/loader-elem.component';
 import { CellElemComponent } from './elements/cell-elem-index/cell-elem.component';
-import { IndexDataPagesService  } from './elements/cell-elem-index/indexDataPages.service';
-import { IndexDataPage  } from '../assets/data/indexDataPage';
+import { IndexDataPagesService  } from './services/indexDataPages.service';
+import { IndexDataPage  } from './data/indexDataPage';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 import { RouterModule} from '@angular/router';
 import { BackToIndexComponent } from './elements/common-elems/back-to-index/back-to-index.component';
 import { HeaderPortfolioPageComponent } from './pages/portfolio-page/header-portfolio-page/header-portfolio-page.component';
 import { AboutMeShortComponent } from './elements/about-me-short/about-me-short.component';
 import { ListPortfolioBlockComponent } from './pages/portfolio-page/list-portfolio-block/list-portfolio-block.component';
-import { PortfolioDataPage } from '../assets/data/portfolioDataPage';
-import { PortfolioDataPageService } from './pages/portfolio-page/list-portfolio-block/portfolioDataPage.service';
+import { PortfolioDataPage } from './data/portfolioDataPage';
+import { PortfolioDataPageService } from './services/portfolioDataPage.service';
 import { ListPortfolioItemComponent } from './pages/portfolio-page/list-portfolio-block/list-portfolio-item/list-portfolio-item.component';
 import { CellElemPortfolioComponent } from './elements/cell-elem-portfolio/cell-elem-portfolio.component';
 import { ContactFormPopupComponent } from './elements/common-elems/contact-form-popup/contact-form-popup.component';
 import { ContactMeElemComponent } from './elements/common-elems/contact-me-elem/contact-me-elem.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { Set } from '../assets/js/custom/set';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -56,7 +57,6 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-
 
 
 @NgModule({
@@ -127,7 +127,7 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-  ]
+  ],
 })
 
 export class DemoMaterialModule {}
@@ -162,7 +162,7 @@ const routes = [
     NoopAnimationsModule,
     DemoMaterialModule,
   ],
-  providers: [IndexDataPage, IndexDataPagesService, PortfolioDataPage, PortfolioDataPageService],
+  providers: [IndexDataPage, IndexDataPagesService, PortfolioDataPage, PortfolioDataPageService, Set],
   bootstrap: [AppComponent]
 })
 

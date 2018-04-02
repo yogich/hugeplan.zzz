@@ -49,3 +49,36 @@
     }
   }
 }
+
+#behance-dialog{
+  &:before{
+    animation: open-animation-behance .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
+  }
+  .dialog-content{
+    background: transparent;
+    .wrapper-behance{
+      .text-center;
+      margin: 10px auto;
+      max-width: 1000px;
+      img{
+        width: 100%;
+        max-width: 1000px;
+      }
+    }
+
+  }
+}
+
+@keyframes open-animation-behance{
+  0%{
+    height: 0;
+    top: 50%;
+    background-color: #222;
+  }
+
+  100%{
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0,0,0,.8);
+  }
+}

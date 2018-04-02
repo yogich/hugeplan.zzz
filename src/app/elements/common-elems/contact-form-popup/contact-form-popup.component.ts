@@ -1,24 +1,48 @@
-import {Component, Output, OnInit, EventEmitter} from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormControl, Validators} from '@angular/forms';
+import { Component, Output, OnInit, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import * as $ from 'jquery';
 declare var google: any;
 
 @Component({
   selector: 'app-contact-form-popup',
   templateUrl: './contact-form-popup.component.html',
-  styleUrls: ['./contact-form-popup.component.less']
+  styleUrls: ['./contact-form-popup.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ContactFormPopupComponent implements OnInit {
 
   @Output() popupStatus = new EventEmitter();
 
   public email = new FormControl('', [Validators.required, Validators.email]);
-
+  public valueName;
+  public valueEmail;
+  public valuePhone;
+  public valueText;
 
   constructor() { }
 
   ngOnInit() {
     this.initialize();
+
+    $('#portfolio-contact-us-form').submit(function () {
+      // Добавление решётки к имени ID
+      const formNm = $(this);
+      console.log(formNm.serialize());
+      $.ajax({
+        type: "POST",
+        url: 'mail.php',
+        data: formNm.serialize(),
+        success: function (data) {
+          // Вывод текста результата отправки
+          $(formNm).html(data);
+        },
+        error: function (jqXHR, text, error) {
+          // Вывод текста ошибки отправки
+          $(formNm).html(error);
+        }
+      });
+      return false;
+    });
   }
 
   closePopup() {
@@ -267,9 +291,10 @@ export class ContactFormPopupComponent implements OnInit {
   }
 
   getErrorMessage() {
-    return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
+    return this.email.hasError('required') ? 'Введите Ваш E-mail' :
+        this.email.hasError('email') ? 'Неверный формат E-mail адреса' :
             '';
   }
+
 
 }

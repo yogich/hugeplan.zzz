@@ -1,33 +1,58 @@
-<div id="popup-article" class="popup" [ngClass]="{'show': false}">
-  <div class="popup-content">
-    <a class="popup-close" (click)="closePopup()">close</a>
-    <div class="popup-contacts">
+<div id="popup-article" class="dialog">
+  <div class="dialog-content">
+    <a class="dialog-close" (click)="closePopup()">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 47.971 47.971" xml:space="preserve">
+        <g>
+          <path class="svg-dark-grey" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88   c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242   C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879   s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+        </g>
+      </svg>
+    </a>
+    <div class="dialog-contacts">
+      <div class="header">
+        <div>Contact form & Location</div>
+      </div>
       <div class="wrapper-form">
-        <form>
-          <div class="form-group">
-            <mat-form-field>
-              <input matInput placeholder="Enter your name" required>
-            </mat-form-field>
+        <form id="portfolio-contact-us-form" class="container-fluid">
+          <div class="row">
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <input matInput type="text" name="name" placeholder="Как к Вам обращаться?" [(ngModel)]="valueName" [ngModelOptions]="{standalone: true}" required>
+                <button mat-button *ngIf="valueName" matSuffix mat-icon-button aria-label="Clear" (click)="valueName=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <input matInput type="email" name="email" placeholder="Ваш E-mail" [formControl]="email" [(ngModel)]="valueEmail" required>
+                <button mat-button *ngIf="valueEmail" matSuffix mat-icon-button aria-label="Clear" (click)="valueEmail=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12 col-md-4">
+              <mat-form-field>
+                <span matPrefix>+38 &nbsp;</span>
+                <input matInput type="tel" name="phone" placeholder="Номер телефона" [(ngModel)]="valuePhone" [ngModelOptions]="{standalone: true}">
+                <button mat-button *ngIf="valuePhone" matSuffix mat-icon-button aria-label="Clear" (click)="valuePhone=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="form-group col-12">
+              <mat-form-field>
+                <textarea matInput name="text" placeholder="Сообщение" matTextareaAutosize matAutosizeMinRows="2"
+                       matAutosizeMaxRows="10" [(ngModel)]="valueText" [ngModelOptions]="{standalone: true}" required></textarea>
+                <button mat-button *ngIf="valueText" matSuffix mat-icon-button aria-label="Clear" (click)="valueText=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
           </div>
-          <div class="form-group">
-            <mat-form-field>
-              <input matInput placeholder="Enter your email" [formControl]="email" required>
-              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>
+          <div class="text-center">
+            <button type="submit" mat-raised-button color="primary" class="btn btn-main-color">Отправить</button>
           </div>
-          <div class="form-group">
-            <mat-form-field>
-              <textarea matInput placeholder="Textarea"></textarea>
-            </mat-form-field>
-          </div>
-          <div class="form-group">
-            <mat-form-field>
-              <mat-select placeholder="Select">
-                <mat-option value="option">Option</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>

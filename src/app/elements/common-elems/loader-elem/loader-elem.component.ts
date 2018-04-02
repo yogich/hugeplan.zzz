@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as nanobar from '../../../../assets/js/lib/nanobar.js';
-import * as set from '../../../../assets/js/custom/set.js';
+import { Set } from '../../../../assets/js/custom/set';
 
 @Component({
     selector: 'app-loader-elem',
@@ -11,7 +11,7 @@ import * as set from '../../../../assets/js/custom/set.js';
 
 export class LoaderElemComponent implements OnInit {
 
-    constructor() {}
+    constructor(public set: Set) {}
 
     ngOnInit() {
         let loaderBar = <any>{}; // hack
@@ -19,7 +19,7 @@ export class LoaderElemComponent implements OnInit {
         const loaderContainer = document.querySelector('.loader-container'),
             loaderLogo = loaderContainer.querySelector('.logo'),
             loaderDescription = loaderContainer.querySelector('.description'),
-            chooseDelay = new set.Delay();
+            chooseDelay = this.set.Delay;
 
         loaderBar = loadingBar('loader', '#fff');
 

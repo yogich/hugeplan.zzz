@@ -1,43 +1,44 @@
 @import "../../../../assets/less/set.less";
+@import "../../../../assets/less/preset.less";
 
-.popup{
-  .flex;
-  .fixed;
-  width: 100%;
-  height: 100vh;
-  z-index: 123;
-  top: 0;
-  right: 0;
-  &:before{
-    .fixed;
-    content: "";
+.dialog{
+
+  .dialog-content{
     width: 100%;
-    background-color: #222;
-    left: 0;
-    top: 50%;
-    will-change: height, top;
-    animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
-  }
-  &:after{
-    .absolute;
-    content: "";
-    width: 0;
-    height: 2px;
-    background-color: #222;
-    will-change: width, opacity;
-    animation: line-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) both;
-    top: 50%;
-    left: 0;
-    margin-top: -1px;
-  }
-
-  .popup-content{
-    width: 100%;
-    animation: fade .5s ease-out 1.3s both;
-
-    .popup-contacts{
-      height: 100%;
+    background: white;
+    .dialog-contacts{
+      .flex;
+      .flex-column;
+      height: 51%;
+      padding-top: 100px;
       background: @so-white-f6;
+      .header{
+        .header-text-decorator;
+        div{
+          .text-center;
+          .header-text-style.fs--medium;
+        }
+      }
+      .wrapper-form{
+        .flex;
+        .flex-grow;
+        .flex-full-center;
+        form{
+          max-width: 1000px;
+          mat-form-field{
+            width: 100%;
+          }
+          .mat-form-field-wrapper{
+            .mat-form-field-suffix{
+              .abs-right;
+              .mat-icon {
+                height: 1.5em;
+                line-height: 1.5;
+              }
+            }
+          }
+        }
+      }
     }
 
     .wrapper-map{
@@ -51,66 +52,6 @@
         height: 100%;
       }
     }
-  }
-
-  .popup-close{
-    width: 3.2rem;
-    height: 3.2rem;
-    text-indent: -9999px;
-    position: fixed;
-    z-index: 2;
-    top: 20px;
-    right: 20px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE5IDYuNDFMMTcuNTkgNSAxMiAxMC41OSA2LjQxIDUgNSA2LjQxIDEwLjU5IDEyIDUgMTcuNTkgNi40MSAxOSAxMiAxMy40MSAxNy41OSAxOSAxOSAxNy41OSAxMy40MSAxMnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
-  }
-
-
-}
-
-@keyframes line-animation{
-
-  0%{
-    width: 0;
-    opacity: 1;
-  }
-
-  99%{
-    width: 100%;
-    opacity: 1;
-  }
-
-  100%{
-    width: 100%;
-    opacity: 0;
-  }
-}
-
-@keyframes open-animation{
-
-  0%{
-    height: 0;
-    top: 50%;
-    background-color: #222;
-  }
-
-  100%{
-    height: 100vh;
-    top: 0;
-    background-color: #fff;
-  }
-}
-
-@keyframes fade{
-
-  0%{
-    opacity: 0;
-  }
-
-  100%{
-    opacity: 1;
   }
 }
 

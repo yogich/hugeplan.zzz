@@ -10,7 +10,9 @@ export class CellElemPortfolioComponent implements OnInit {
 
   @Input() content;
 
-  constructor() { }
+  public scroll;
+
+  constructor() {}
 
   ngOnInit() {
   }
